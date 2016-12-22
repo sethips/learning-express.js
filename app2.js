@@ -6,6 +6,8 @@ var blocks = {
     'Movable': 'Capable of moving',
     'Rotate': 'Rotates in circle'
 };
+app.use(express.static('public'));
+
 
 app.get('/blocks/:name', function(request, response) {
     // var description = blocks[request.params.name];
