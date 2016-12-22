@@ -1,11 +1,11 @@
 $(function() {
-	$.get('/blocks', appendToList);
+    $.get('/blocks', appendToList);
 
-	function appendToList(blocks) {
-		var list = [];
-		for (var i in blocks) {
-			list.push('<li>' + blocks[i] + '</li>');
-		}
-		$('.block-list').append(list);
-	}
+    function appendToList(blocks) {
+        var list = [];
+        for (var i in blocks) {
+            list.push('<li>' + blocks[i] + '</li>');
+        }
+        $('.block-list').append(list);
+    }
 });

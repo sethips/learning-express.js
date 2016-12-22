@@ -7,11 +7,17 @@ app.use(logger);
 app.use(express.static('public'));
 
 app.get('/blocks', function(request, response) {
-	var blocks = ['Fixed', 'Movable', 'Rotate'];
-	response.json(blocks);
+    var blocks = ['Fixed', 'Movable', 'Rotate'];
+    if (request.query.limit >= 0) {
+    	response.json(blocks.slice(0, request.query.limit));
+    } else {
+    	response.json(blocks);
+    }
+    
 })
 
 
-app.listen(3000, function() {
-	console.log('Listening on port 3000'); 
-}); 
+app.listen(8000, function() {
+    console.log('Listening on port 8000');
+});
+
